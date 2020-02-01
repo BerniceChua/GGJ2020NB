@@ -78,14 +78,15 @@ public class MovePiece : MonoBehaviour {
 
     private void InventoryControl()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        if ( (Input.GetAxis("Mouse ScrollWheel") > 0) && (m_IsPieceLocked == false) )
         {
             transform.position = new Vector2(7.0f, transform.position.y - 2.4f);
 
             m_yDifference -= 2.4f;
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") < 0) {
+        if ( (Input.GetAxis("Mouse ScrollWheel") < 0) && (m_IsPieceLocked == false) )
+        {
             transform.position = new Vector2(7.0f, transform.position.y + 2.4f);
             m_yDifference += 2.4f;
         }
