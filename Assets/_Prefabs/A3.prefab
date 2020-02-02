@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8743903470603595502}
   - component: {fileID: 8743903470603595505}
   m_Layer: 0
-  m_Name: abstract_art_10
+  m_Name: A3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

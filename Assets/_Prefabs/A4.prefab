@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6606867238646877630}
   - component: {fileID: 6606867238646877629}
   m_Layer: 0
-  m_Name: abstract_art_15
+  m_Name: A4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
