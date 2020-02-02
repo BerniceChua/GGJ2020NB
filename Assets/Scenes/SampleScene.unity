@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -222,6 +223,7 @@ LineRenderer:
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -345,6 +347,7 @@ TrailRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -592,6 +595,8 @@ MonoBehaviour:
   m_isCorrectPlacement: 0
   m_yDifference: 0
   m_inventoryPosition: {x: 0, y: 0}
+  m_Stage2Image: {fileID: 6475665022224224648, guid: 1fad0c87609434eda87b866e199bf519,
+    type: 3}
 --- !u!212 &300516499
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -606,6 +611,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -959,6 +965,7 @@ LineRenderer:
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1307,6 +1314,7 @@ LineRenderer:
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2681,6 +2689,7 @@ TrailRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2807,6 +2816,7 @@ LineRenderer:
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3001,6 +3011,7 @@ TrailRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3185,6 +3196,7 @@ TrailRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5453,6 +5465,8 @@ MonoBehaviour:
   m_isCorrectPlacement: 0
   m_yDifference: 0
   m_inventoryPosition: {x: 0, y: 0}
+  m_Stage2Image: {fileID: -2412143407600840820, guid: 1fad0c87609434eda87b866e199bf519,
+    type: 3}
 --- !u!212 &1566655727
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5467,6 +5481,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5565,6 +5580,7 @@ TrailRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5691,6 +5707,7 @@ LineRenderer:
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6105,6 +6122,8 @@ MonoBehaviour:
   m_isCorrectPlacement: 0
   m_yDifference: 0
   m_inventoryPosition: {x: 0, y: 0}
+  m_Stage2Image: {fileID: -6234265370790752154, guid: 1fad0c87609434eda87b866e199bf519,
+    type: 3}
 --- !u!212 &1729009437
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6119,6 +6138,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6266,6 +6286,8 @@ MonoBehaviour:
   m_isCorrectPlacement: 0
   m_yDifference: 0
   m_inventoryPosition: {x: 0, y: 0}
+  m_Stage2Image: {fileID: -4091620349832114721, guid: 1fad0c87609434eda87b866e199bf519,
+    type: 3}
 --- !u!212 &1804442516
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6280,6 +6302,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6650,6 +6673,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6795,6 +6819,8 @@ MonoBehaviour:
   m_isCorrectPlacement: 0
   m_yDifference: 0
   m_inventoryPosition: {x: 0, y: 0}
+  m_Stage2Image: {fileID: 7797715254015162900, guid: 1fad0c87609434eda87b866e199bf519,
+    type: 3}
 --- !u!212 &2069433545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6809,6 +6835,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
