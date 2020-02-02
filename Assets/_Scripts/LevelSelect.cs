@@ -42,12 +42,12 @@ public class LevelSelect : MonoBehaviour
 
     public void ChooseLevel()
     {
-        if (gameObject.name == "Level1_Text (TMP)")
+        if (this.gameObject.name == "Level1Button")
         {
             WhichLevel = 1;
         }
 
-        if (gameObject.name == "Level2_Text (TMP)")
+        if (this.gameObject.name == "Level1Button")
         {
             WhichLevel = 2;
         }
