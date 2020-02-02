@@ -46,7 +46,7 @@ public class MovePiece : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        timeBonus -= Time.deltaTime;
+        //timeBonus -= Time.deltaTime;
 
         InventoryControl();
 
@@ -80,7 +80,11 @@ public class MovePiece : MonoBehaviour {
             Instantiate(m_edgeParticles, collision.gameObject.transform.position, m_edgeParticles.rotation);
             m_isCorrectPlacement = false;  /// to reset this value and get out of OnTriggerStay2D.
             TotalScore += 10;
+
             GetComponent<AudioSource>().PlayOneShot(m_sfxPutdown);
+
+            GameManager.remainingPieces -= 1;
+            Debug.Log("GameManager.remainingPieces = " + GameManager.remainingPieces);
         }
 
         if ((collision.gameObject.name != this.gameObject.name) && (m_isCorrectPlacement == true)) {
