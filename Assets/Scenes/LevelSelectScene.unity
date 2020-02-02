@@ -1051,4 +1051,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd348c6ddaab4a42a844b56fcf9b9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenePath: 
+  scenePath: SampleScene
