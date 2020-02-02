@@ -18,6 +18,11 @@ public class ScoreControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (MovePiece.timeBonus <= 0)
+        {
+            MovePiece.timeBonus = 0;
+        }
+
         m_scoreText.text = "Score: " + Mathf.RoundToInt(MovePiece.TotalScore + MovePiece.timeBonus).ToString();
     }
 }
