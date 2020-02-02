@@ -1,7 +1,7 @@
 # Abstraction - GGJ2020
 An abstract jigsaw puzzle game about interpretation.
 
-[image pending]
+![](https://ggj.s3.amazonaws.com/styles/game_sidebar__wide/featured_image/2020/02/75440/abstract_12.png?itok=g64KvhBa&timestamp=1580683716)
 
 # About
 This is a game made for the [2020 Global Game Jam (January 31st - February 2nd)](https://globalgamejam.org/2020/jam-sites/noisebridge).
