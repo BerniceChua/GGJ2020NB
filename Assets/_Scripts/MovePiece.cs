@@ -13,8 +13,13 @@ public class MovePiece : MonoBehaviour {
     [SerializeField] private Transform m_edgeParticles;
 
     [SerializeField] private KeyCode m_placePiece;
+    [SerializeField] private KeyCode m_returnToInventory;
 
     [SerializeField] private bool m_isCorrectPlacement = false;
+
+    [SerializeField] private float m_yDifference;//
+
+    [SerializeField] private Vector2 m_inventoryPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +29,8 @@ public class MovePiece : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        InventoryControl();
+
         if (m_IsPickedUp == true && m_IsPieceLocked == false) {
             /// Transfers the mouse motion to the jigsaw puzzle piece.
             Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -48,7 +55,7 @@ public class MovePiece : MonoBehaviour {
             //GetComponent<BoxCollider2D>().enabled = false;
             ///
 
-            GetComponent<Renderer>().sortingOrder = 0;
+            GetComponent<Renderer>().sortingOrder = 1;
             transform.position = collision.gameObject.transform.position;
             m_IsPieceLocked = true;
             Instantiate(m_edgeParticles, collision.gameObject.transform.position, m_edgeParticles.rotation);
@@ -65,5 +72,28 @@ public class MovePiece : MonoBehaviour {
         m_IsPickedUp = true;
         m_isCorrectPlacement = false;
         GetComponent<Renderer>().sortingOrder = 10;
+
+        m_inventoryPosition = transform.position;
+    }
+
+    private void InventoryControl()
+    {
+        if ( (Input.GetAxis("Mouse ScrollWheel") > 0) && (m_IsPieceLocked == false) )
+        {
+            transform.position = new Vector2(7.0f, transform.position.y - 2.4f);
+
+            m_yDifference -= 2.4f;
+        }
+
+        if ( (Input.GetAxis("Mouse ScrollWheel") < 0) && (m_IsPieceLocked == false) )
+        {
+            transform.position = new Vector2(7.0f, transform.position.y + 2.4f);
+            m_yDifference += 2.4f;
+        }
+
+        if ( (Input.GetKeyDown(m_returnToInventory) && m_IsPickedUp == true) )
+        {
+            transform.position = new Vector2(7.0f, m_inventoryPosition.y + m_yDifference);
+        }
     }
 }
