@@ -40,6 +40,8 @@ https://globalgamejam.org/2020/games/abstractor-0
 * http://www.dobuki.net/
 * https://twitter.com/jacklehamster
 * https://www.linkedin.com/in/vincentlequang
+* https://jacklehamster.github.io/art/
+* https://jacklehamster.github.io/
 
 **Hughe Vang** - (composer, audio designer/programmer)
 
