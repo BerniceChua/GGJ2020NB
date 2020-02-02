@@ -23,6 +23,14 @@ public class MovePiece : MonoBehaviour {
 
     public Sprite m_Stage2Image;
 
+    public static int TotalScore;
+
+    /// <summary>
+    /// can comment these out later.
+    /// </summary>
+    public static float timeBonus = 120.0f;
+    ///  ///  ///
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +42,8 @@ public class MovePiece : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        timeBonus -= Time.deltaTime;
+
         InventoryControl();
 
         if (m_IsPickedUp == true && m_IsPieceLocked == false) {
@@ -65,11 +75,14 @@ public class MovePiece : MonoBehaviour {
             m_IsPieceLocked = true;
             Instantiate(m_edgeParticles, collision.gameObject.transform.position, m_edgeParticles.rotation);
             m_isCorrectPlacement = false;  /// to reset this value and get out of OnTriggerStay2D.
+            TotalScore += 10;
         }
-        else {
+
+        if ((collision.gameObject.name != this.gameObject.name) && (m_isCorrectPlacement == true)) {
             Debug.Log("Collided with " + collision.name + "; try again.");
             /// Play some sound???
             m_isCorrectPlacement = false;  /// to reset this value and get out of OnTriggerStay2D.
+            TotalScore += 2;
         }
     }
 
