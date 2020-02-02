@@ -17,14 +17,19 @@ public class MovePiece : MonoBehaviour {
 
     [SerializeField] private bool m_isCorrectPlacement = false;
 
-    [SerializeField] private float m_yDifference;//
+    [SerializeField] private float m_yDifference;
 
     [SerializeField] private Vector2 m_inventoryPosition;
+
+    public Sprite m_Stage2Image;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (LevelSelect.WhichLevel == 2)
+        {
+            GetComponent<SpriteRenderer>().sprite = m_Stage2Image;
+        }
     }
 
     // Update is called once per frame
