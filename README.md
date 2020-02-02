@@ -37,7 +37,8 @@ https://globalgamejam.org/2020/games/abstractor-0
 
 **Vincent Le Quang** - (artist, programmer)
 
-* [links pending]
+* http://www.dobuki.net/
+* https://www.linkedin.com/in/vincentlequang
 
 **Hughe Vang** - (composer, audio designer/programmer)
 
