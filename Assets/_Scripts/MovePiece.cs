@@ -23,6 +23,10 @@ public class MovePiece : MonoBehaviour {
 
     public Sprite m_Stage2Image;
 
+    public AudioClip m_sfxPickup;
+    public AudioClip m_sfxPutdown;
+    public AudioClip m_sfxInvalid;
+
     public static int TotalScore;
 
     /// <summary>
@@ -76,10 +80,12 @@ public class MovePiece : MonoBehaviour {
             Instantiate(m_edgeParticles, collision.gameObject.transform.position, m_edgeParticles.rotation);
             m_isCorrectPlacement = false;  /// to reset this value and get out of OnTriggerStay2D.
             TotalScore += 10;
+            GetComponent<AudioSource>().PlayOneShot(m_sfxPutdown);
         }
 
         if ((collision.gameObject.name != this.gameObject.name) && (m_isCorrectPlacement == true)) {
             Debug.Log("Collided with " + collision.name + "; try again.");
+            GetComponent<AudioSource>().PlayOneShot(m_sfxInvalid);
             /// Play some sound???
             m_isCorrectPlacement = false;  /// to reset this value and get out of OnTriggerStay2D.
             TotalScore += 2;
@@ -87,11 +93,13 @@ public class MovePiece : MonoBehaviour {
     }
 
     private void OnMouseDown() {
+        if(!m_IsPickedUp) GetComponent<AudioSource>().PlayOneShot(m_sfxPickup);
         m_IsPickedUp = true;
         m_isCorrectPlacement = false;
         GetComponent<Renderer>().sortingOrder = 10;
 
         m_inventoryPosition = transform.position;
+        
     }
 
     private void InventoryControl()
