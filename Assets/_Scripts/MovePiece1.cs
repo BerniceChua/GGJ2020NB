@@ -21,6 +21,10 @@ public class MovePiece1 : MonoBehaviour {
 
     [SerializeField] private Vector2 m_inventoryPosition;
 
+    public AudioClip m_sfxPickup;
+    public AudioClip m_sfxPutdown;
+    public AudioClip m_sfxInvalid;
+
     public Sprite m_Stage2Image;
 
     public static int TotalScore;
@@ -44,14 +48,14 @@ public class MovePiece1 : MonoBehaviour {
     void Update() {
         //timeBonus -= Time.deltaTime;
 
-        InventoryControl();
+        //InventoryControl();
 
         //if (Input.GetMouseButton(0) && )
         //{
 
         //}
 
-        if (m_IsPickedUp == true && m_IsPieceLocked == false) {
+        if (m_IsPickedUp == true) {
             /// Transfers the mouse motion to the jigsaw puzzle piece.
             Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             Vector2 objPos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -59,6 +63,7 @@ public class MovePiece1 : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(m_placePiece) && m_IsPickedUp == true) {
+            m_IsPickedUp = false;
             m_isCorrectPlacement = true;
         }
     }
@@ -82,12 +87,15 @@ public class MovePiece1 : MonoBehaviour {
             m_isCorrectPlacement = false;  /// to reset this value and get out of OnTriggerStay2D.
             TotalScore += 10;
 
+            GetComponent<AudioSource>().PlayOneShot(m_sfxPutdown);
+
             GameManager.remainingPieces -= 1;
             Debug.Log("GameManager.remainingPieces = " + GameManager.remainingPieces);
         }
 
         if ((collision.gameObject.name != this.gameObject.name) && (m_isCorrectPlacement == true)) {
             Debug.Log("Collided with " + collision.name + "; try again.");
+            GetComponent<AudioSource>().PlayOneShot(m_sfxInvalid);
             /// Play some sound???
             m_isCorrectPlacement = false;  /// to reset this value and get out of OnTriggerStay2D.
             TotalScore += 2;
@@ -95,6 +103,7 @@ public class MovePiece1 : MonoBehaviour {
     }
 
     private void OnMouseDown() {
+        if (!m_IsPickedUp) GetComponent<AudioSource>().PlayOneShot(m_sfxPickup);
         m_IsPickedUp = true;
         m_isCorrectPlacement = false;
         GetComponent<Renderer>().sortingOrder = 10;
@@ -102,24 +111,24 @@ public class MovePiece1 : MonoBehaviour {
         m_inventoryPosition = transform.position;
     }
 
-    private void InventoryControl()
-    {
-        if ( (Input.GetAxis("Mouse ScrollWheel") > 0) && (m_IsPieceLocked == false) )
-        {
-            transform.position = new Vector2(7.0f, transform.position.y - 2.4f);
+    //private void InventoryControl()
+    //{
+    //    if ( (Input.GetAxis("Mouse ScrollWheel") > 0) && (m_IsPieceLocked == false) )
+    //    {
+    //        transform.position = new Vector2(7.0f, transform.position.y - 2.4f);
 
-            m_yDifference -= 2.4f;
-        }
+    //        m_yDifference -= 2.4f;
+    //    }
 
-        if ( (Input.GetAxis("Mouse ScrollWheel") < 0) && (m_IsPieceLocked == false) )
-        {
-            transform.position = new Vector2(7.0f, transform.position.y + 2.4f);
-            m_yDifference += 2.4f;
-        }
+    //    if ( (Input.GetAxis("Mouse ScrollWheel") < 0) && (m_IsPieceLocked == false) )
+    //    {
+    //        transform.position = new Vector2(7.0f, transform.position.y + 2.4f);
+    //        m_yDifference += 2.4f;
+    //    }
 
-        if ( (Input.GetKeyDown(m_returnToInventory) && m_IsPickedUp == true) )
-        {
-            transform.position = new Vector2(7.0f, m_inventoryPosition.y + m_yDifference);
-        }
-    }
+    //    if ( (Input.GetKeyDown(m_returnToInventory) && m_IsPickedUp == true) )
+    //    {
+    //        transform.position = new Vector2(7.0f, m_inventoryPosition.y + m_yDifference);
+    //    }
+    //}
 }
