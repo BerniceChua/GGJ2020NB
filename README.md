@@ -56,6 +56,12 @@ https://globalgamejam.org/2020/games/abstractor-0
 
 [roadmap pending]
 
+Trello:
+https://trello.com/b/IKW78VfF/ggj2020nb
+
+Design Doc:
+https://github.com/BerniceChua/GGJ2020NB/wiki
+
 # Feedback
 
 We welcomes any and all the feedbacks! ^_^  You can use the above links to contact the people involved in this project.
